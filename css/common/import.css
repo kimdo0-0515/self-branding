@@ -1,0 +1,18 @@
+/* ===== Library ===== */
+/* Font Awesome */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css");
+/* Swiper */
+@import url("https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css");
+
+
+
+/* ===== Initial Setting ===== */
+@import './font.css';
+@import './variable.css';
+@import './reset.css';
+
+
+
+/* ===== Basic Component & Layout - Custom ===== */
+@import './component.css';
+@import './basic-layout.css';

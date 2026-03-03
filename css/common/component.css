@@ -1,0 +1,307 @@
+/* ===== H Tag Basic ===== */
+h1, h2, h3, h4{
+  font-family: 'Paperozi';
+  font-weight: 700;
+}
+h1{ font-size: var(--title-h1); }
+h2{ font-size: var(--title-h2); }
+h3{ font-size: var(--title-h3); }
+h4{ font-size: var(--title-h4); }
+
+
+
+/* ===== 본문 ===== */
+.bold{ font-weight: 700; }
+.text--xl{ font-size: var(--text-xl); }
+.text--l{ font-size: var(--text-l); }
+.text--m{ font-size: var(--text-m); }
+.text--s{ font-size: var(--text-s); }
+
+
+
+/* ===== 크기별 아이콘 정의 ===== */
+i, i[class*="icon--"]{
+  display: inline-block;
+	min-width: auto;
+	aspect-ratio: 1 / 1;
+  line-height: 1;
+}
+.icon--xsmall{
+  width: 16px;
+  font-size: 16px;
+}
+.icon--small{
+  width: 24px;
+  font-size: 24px;
+}
+.icon--medium{
+  width: 32px;
+  font-size: 32px;
+}
+.icon--large{
+  width: 48px;
+  font-size: 48px;
+}
+
+
+
+/* ===== 버튼 정의 ===== */
+/* button init */
+[class^="btn"], .btn, div.btn, button.btn{
+	width: fit-content;
+	background-color: transparent;
+	border-radius: var(--border-radius-6);
+	border: none;
+	font-weight: 700;
+	text-align: center;
+	line-height: 140%;
+	margin-left: 6px;
+	float: left;
+	transition: var(--transition-015);
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+  gap: 6px;
+}
+
+/* button position */
+.page-button{ 
+	width: 100%;
+	text-align: center;
+	display: inline-block;
+	margin: 6px 0;
+	position: relative;
+}
+.page-button-left{float: left;}
+.page-button-right{float: right;}
+.page-button-center{width: fit-content; margin: 0 auto;}
+.page-button-wide, .page-button-wide .btn{width: 100%;}
+:where(.page-button-left, .page-button-right, .page-button-center, .page-button-wide) > .btn:first-child{margin-left: 0;}
+
+/* button size */
+.btn--large{
+  min-width: 144px;
+  height: 52px;
+  padding: 0 12px;
+  font-size: var(--text-l);
+}
+.btn--medium{
+  min-width: 120px;
+  height: 42px;
+  padding: 0 12px;
+  font-size: var(--text-m);
+}
+
+/* button style */
+.btn.btn--purple{
+  background-color: var(--purple-400);
+  color: var(--white);
+}
+.btn.btn--gray{
+  background-color: var(--gray-500);
+  color: var(--white);
+}
+@media (hover: hover) and (pointer: fine){
+  .btn.btn--purple:hover{
+    background-color: var(--purple-300);
+    color: var(--white);
+  }
+  .btn.btn--gray:hover{
+    background-color: var(--gray-300);
+    color: var(--gray-500);
+  }
+}
+.btn.btn--purple:active{
+  background-color: var(--purple-400);
+  color: var(--purple-600);
+}
+.btn.btn--gray:active{
+  background-color: var(--gray-600);
+  color: var(--white);
+}
+
+.btn i{
+  line-height: inherit;
+}
+
+
+
+/* ===== 탭버튼 정의 ===== */
+/* Tab common */
+.tab-wrap{
+  width: fit-content;
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: var(--border-radius-6);
+  box-shadow: var(--box-shadow);
+}
+.tab-wrap .tab{
+  width: fit-content;
+  min-width: 142px;
+  height: 42px;
+  padding: 0 24px;
+  background-color: var(--white);
+  font-size: var(--text-l);
+  font-weight: 400;
+  color: var(--gray-600);
+  text-align: center;
+  line-height: 140%;
+  transition-duration: var(--transition-015);
+  cursor: pointer;
+}
+.tab input[type="radio"]{
+  display: none;
+}
+.tab span{
+  display: inline-flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tab style */
+@media (hover: hover) and (pointer: fine){
+  /* Default Tab hover */
+  .tab:hover{
+    background-color: var(--purple-200);
+  }
+
+  /* Checked Tab hover */
+  [class*="tab-wrap--"] .tab:has(input:checked):hover::after{
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.tab:active, .tab:has(input[type="radio"]:checked){
+  background-color: var(--purple-400);
+  font-weight: 700;
+  color: var(--white);
+}
+
+
+
+/* ===== Select field 정의 ===== */
+.select-wrap{
+  width: 160px;
+  min-width: 72px;
+  position: relative;
+  transition-duration: var(--transition-015);
+}
+.select-wrap *{
+  transition-duration: inherit;
+}
+.select-btn{
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  background-color: var(--white);
+  border: 2px solid var(--purple-400);
+  border-radius: var(--border-radius-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.select-list{
+  width: 100%;
+  max-height: 0;
+  padding: 0;
+  background-color: var(--white);
+  border-radius: var(--border-radius-6);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 6px;
+  z-index: 500;
+}
+.select-option{
+  width: 100%;
+  padding: 12px;
+  background-color: var(--white);
+  cursor: pointer;
+}
+.select-option input[type="radio"]{
+  display: none;
+}
+.select-btn:focus{
+  outline: 4px solid var(--blue-200);
+}
+.select-btn:focus + .select-list{
+  max-height: 360px;
+  padding: 6px 0;
+}
+@media (hover: hover) and (pointer: fine){
+  .select-option:hover{
+    background-color: var(--purple-100);
+  }
+}
+.select-option:active{
+  background-color: var(--purple-300);
+}
+
+
+
+/* ===== Pagination ===== */
+.pagination-wrap{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  transition-duration: var(--transition-015);
+}
+.pagination-wrap *{
+  transition-duration: inherit;
+}
+.pagination-arrow-btn{
+  width: 24px;
+  height: 24px;
+}
+.pagination-arrow-btn:disabled{
+  color: var(--gray-300);
+  cursor: default;
+}
+.page-num-wrap{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pagination-num-btn{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: var(--text-xl);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination-num-btn.active{
+  font-weight: 700;
+  color: var(--red-500);
+}
+@media (hover: hover) and (pointer: fine){
+  .pagination-num-btn:hover{
+    background-color: var(--red-200);
+  }
+}
+.pagination-num-btn:active{
+  color: var(--red-400);
+}
+
+
+
+/* ========== Responsive - Tab Size ========== */
+@media all and (max-width: 1024px){
+  .tab-wrap .tab{
+    min-width: 126px;
+    padding: 0 16px;
+  }
+}

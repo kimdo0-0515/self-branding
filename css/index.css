@@ -1,0 +1,820 @@
+/* ========== Main Visual ========== */
+#mainVisual{
+  height: 100vh;
+  background-color: tan;
+  display: none;
+}
+
+
+
+
+/* ========== section: 인적사항 ========== */
+.self-intro-wrap{
+  display: flex;
+  align-items: flex-end;
+  gap: var(--basic-gap);
+  margin-bottom: 64px;
+}
+.id-photo{
+  width: var(--column-2);
+  border: 1px solid var(--gray-200);
+}
+.self-intro__name{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.self-intro__name h3{
+  color: var(--blue-500);
+}
+[class*="self-intro__slogan"]{
+  color: var(--black);
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+[class*="self-intro__slogan"] span{
+  color: var(--blue-400);
+}
+.self-intro__slogan--mo{
+  display: none;
+}
+.self-info-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px var(--basic-gap);
+}
+.personal-info{
+  width: var(--column-3);
+}
+.edu-exp-info{
+  width: var(--column-5);
+}
+.certi-info{
+  width: var(--column-4);
+}
+.self-info__title{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--blue-500);
+  margin-bottom: 16px;
+}
+.self-info__title img{
+  width: 16px;
+}
+.personal-info__ul{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.personal-info__ul li{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.personal-info__ul i{
+  color: var(--blue-500);
+}
+.self-info__timeline{
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  position: relative;
+}
+.self-info__timeline::before{
+  display: block;
+  content: '';
+  width: 1px;
+  height: 100%;
+  background-color: var(--purple-400);
+  position: absolute;
+  top: 0;
+  left: 5.5px;
+}
+.self-info__timeline li{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.timeline__dot{
+  width: 12px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--purple-400);
+  border-radius: 50%;
+}
+.timeline__content .text--s{
+  color: var(--gray-400);
+}
+
+
+
+/* ========== section: 핵심 역량 ========== */
+.competency-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(2*var(--basic-gap)) var(--basic-gap);
+}
+.competency{
+  width: var(--column-3);
+}
+.competency__img-wrap{
+  width: 100%;
+  aspect-ratio: 1 / 0.8;
+  padding: 16px;
+  background-color: var(--gray-200);
+  border-radius: var(--border-radius-16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.competency__img-wrap img{
+  max-height: 100%;
+}
+.competency__title{
+  margin: 16px 0 6px 0;
+  color: var(--blue-500);
+}
+
+
+
+/* ========== section: 스킬 ========== */
+#skillSec{
+  min-height: 900px;
+}
+#skillSec .tab-wrap{
+  margin: 0 auto;
+  margin-bottom: 86px;
+}
+#skillSec .select-wrap{
+  display: none;
+}
+.skill-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px var(--basic-gap);
+}
+.skill{
+  width: var(--column-4);
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+}
+.skill__top{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.skill__icon{
+  width: 60px;
+  aspect-ratio: 1 / 1;
+  padding: 6px;
+  background-color: var(--white);
+  border-radius: var(--border-radius-6);
+  box-shadow: var(--box-shadow);
+}
+[class*="skill__badge"]{
+  display: inline-block;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 12px;
+  font-size: var(--text-s);
+  font-weight: 500;
+  line-height: 24px;
+}
+.skill__badge--cyan{
+  background-color: var(--cyan-200);
+  color: #0E5E6E;
+}
+.skill__badge--purple{
+  background-color: var(--purple-200);
+  color: var(--purple-600);
+}
+.skill__badge--yellow{
+  background-color: var(--yellow-200);
+  color: var(--yellow-600);
+}
+.skill__badge--red{
+  background-color: var(--red-200);
+  color: var(--red-600);
+}
+.skill__title-wrap h4{
+  color: var(--black);
+}
+.skill__accdn-icon{
+  display: none;
+}
+.skill__desc{
+  font-size: var(--text-m);
+}
+/* 모바일의 드롭다운과 기능 겹치지 않게 하기 위해 미디어 쿼리로 기능 작성 */
+@media all and (min-width: 768.01px){
+  /* 탭 기능 */
+  #skillSec .tab-wrap:has(input[value="all"]:checked) ~ .skill-wrap .skill,
+  #skillSec .tab-wrap:has(input[value="fe"]:checked) ~ .skill-wrap .skill[data-type="fe"],
+  #skillSec .tab-wrap:has(input[value="lib"]:checked) ~ .skill-wrap .skill[data-type="lib"],
+  #skillSec .tab-wrap:has(input[value="design"]:checked) ~ .skill-wrap .skill[data-type="design"],
+  #skillSec .tab-wrap:has(input[value="product"]:checked) ~ .skill-wrap .skill[data-type="product"]{
+    display: flex;
+  }
+}
+
+
+
+/* ========== section: 경력사항 ========== */
+#careerSec .section__content{
+  width: var(--column-6);
+  margin: 0 auto;
+}
+.career{
+  padding: 32px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--basic-gap);
+}
+.career + .career{
+  border-top: 1px solid var(--gray-300);
+}
+.career__date{
+  width: var(--column-2);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.career__date .date{
+  color: var(--gray-500);
+}
+.career__info{
+  flex: 1;
+}
+.career__project{
+  color: var(--blue-500);
+}
+.career__detail{
+  margin: 4px 0 16px 0;
+}
+.career-graph{
+  display: flex;
+  flex-direction: column;
+}
+.career-graph + .career-graph{
+  margin-top: 12px;
+}
+.career-graph::before{
+  display: block;
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.career-graph > p{
+  padding-left: 6px;
+  color: var(--gray-500);
+  margin-bottom: 4px;
+}
+.graph{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.graph__bar{
+  flex: 1;
+  max-width: 332px;
+  height: 12px;
+  background-color: var(--gray-200);
+  border-radius: var(--border-radius-6);
+}
+.graph__highlight{
+  height: 100%;
+  border-radius: inherit;
+}
+/* 기획/설계/디자인 */
+.career-graph[data-career="uiux"]::before{ background-color: var(--purple-400); }
+.career-graph[data-career="uiux"] .graph__highlight{ background-color: var(--purple-300); }
+.career-graph[data-career="uiux"] .graph__num{ color: var(--purple-400); }
+/* 개발 */
+.career-graph[data-career="coding"]::before{ background-color: var(--cyan-500); }
+.career-graph[data-career="coding"] .graph__highlight{ background-color: var(--cyan-400); }
+.career-graph[data-career="coding"] .graph__num{ color: var(--cyan-600); }
+/* 검증 */
+.career-graph[data-career="test"]::before{ background-color: var(--red-400); }
+.career-graph[data-career="test"] .graph__highlight{ background-color: var(--red-300); }
+.career-graph[data-career="test"] .graph__num{ color: var(--red-500); }
+
+#careerSec .pagination-wrap{
+  margin: 42px 0 0 0;
+}
+
+
+
+/* ========== section: 프로젝트 ========== */
+.project-wrap{
+  display: flex;
+  gap: var(--basic-gap);
+}
+.project-wrap + .project-wrap{
+  margin-top: 64px;
+}
+.project-swiper, .project-info{
+  width: var(--column-6);
+  height: calc((var(--column-6) / 4)*3);
+}
+.project-swiper{
+  border-radius: var(--border-radius-24);
+  box-shadow: 0 0 24px rgba(17, 17, 17, 0.25);
+}
+.project-swiper .swiper-slide{
+  padding: 24px;
+  background-color: var(--white);
+}
+.project-swiper .pc-mockup-slide img{
+  height: 100%;
+  object-fit: contain;
+  margin: auto;
+}
+.project-swiper .tab-mockup-slide{
+  position: relative;
+}
+.project-swiper .tab-mockup-slide img{
+  position: absolute;
+}
+.project-swiper .tab-mockup-slide .portrait{
+  height: 80%;
+}
+.project-swiper .tab-mockup-slide .landscape{
+  width: 60%;
+  right: 24px;
+  bottom: 48px;
+}
+.project-swiper .mo-mockup-slide{
+  display: flex;
+  gap: var(--basic-gap);
+}
+.project-swiper .mo-mockup-slide img{
+  width: calc((100% - 2*var(--basic-gap)) / 3);
+  object-fit: contain;
+}
+.project-info{
+  display: flex;
+  flex-direction: column;
+}
+.project__title{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.project__tag{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.tag{
+  font-size: var(--text-s);
+  font-weight: 700;
+  color: var(--gray-500);
+}
+.project__detail-wrap{
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--basic-gap) calc(2*var(--basic-gap));
+}
+.project__detail{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+}
+.project__detail .detail__title{
+  padding-left: 10px;
+  color: var(--blue-500);
+  position: relative;
+}
+.project__detail .detail__title::before{
+  display: block;
+  content: '';
+  width: 4px;
+  height: 70%;
+  background-color: var(--blue-500);
+  position: absolute;
+  top: 15%;
+  left: 0;
+}
+.role-wrap{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.role + .role{
+  padding-left: 16px;
+  border-left: 1px solid var(--gray-400);
+}
+.role span:first-child{
+  margin-right: 6px;
+}
+.role.planning .bold{ color: var(--purple-400); }
+.role.design .bold{ color: var(--red-400); }
+.role.develop .bold{ color: var(--cyan-500); }
+.skill-tool-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.pjct-skill-icon{
+  width: 32px;
+}
+.project-info .page-button{
+  margin-top: 36px;
+  margin-bottom: 0;
+}
+
+
+
+/* ========== section: 교육 활동 ========== */
+.edu-wrap{
+  width: 588px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.edu{
+  padding: 32px 0;
+  border-bottom: 1px solid var(--gray-300);
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+.edu:first-child{
+  border-top: 1px solid var(--gray-300);
+}
+.edu__date{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.edu__date img{
+  width: 16px;
+}
+.edu__date span{
+  min-width: 64px;
+  color: var(--gray-500);
+}
+.edu__title{
+  color: var(--blue-500);
+}
+.edu__institution{
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.institution{
+  color: var(--cyan-500);
+}
+.edu__detail{
+  padding-left: 12px;
+  position: relative;
+}
+.edu__detail::before{
+  display: block;
+  content: '';
+  width: 6px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--gray-400);
+  border-radius: 50%;
+  position: relative;
+  top: 13px;
+  left: -12px;
+}
+.edu__detail + .edu__detail{
+  margin-top: 4px;
+}
+
+
+
+
+
+
+/* ========== Responsive: Laptop ========== */
+@media all and (max-width: 1334px){
+
+}
+
+
+
+
+/* ========== Responsive: Tablet ========== */
+@media all and (max-width: 1024px){
+  /* ===== Main Visual ===== */
+  /* ===== section: 인적사항 ===== */
+  .self-intro-wrap{
+    margin-bottom: 48px;
+  }
+  [class*="self-intro__slogan"]{
+    margin-top: 20px;
+  }
+  .personal-info{
+    width: 100%;
+  }
+  .edu-exp-info, .certi-info{
+    width: var(--column-3);
+  }
+  .personal-info__ul{
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px var(--basic-gap);
+  }
+  .self-info__timeline{
+    gap: 24px;
+  }
+  .self-info__timeline li{
+    gap: 16px;
+  }
+
+
+
+  /* ===== section: 핵심 역량 ===== */
+  .competency__img-wrap{
+    padding: calc(2*var(--basic-gap));
+  }
+  .competency__img-wrap img{
+    height: 100%;
+  }
+
+
+
+  /* ===== section: 스킬 ===== */
+  .skill{
+    width: var(--column-3);
+  }
+
+
+
+  /* ===== section: 경력사항 ===== */
+  #careerSec .section__content{
+    width: 588px;
+  }
+  .career__date{
+    width: 160px;
+  }
+  .graph__bar{
+    max-width: 358px;
+  }
+
+
+
+  /* ===== section: 프로젝트 ===== */
+  .project-wrap{
+    flex-direction: column;
+  }
+  .project-wrap + .project-wrap{
+    margin-top: 84px;
+  }
+  .project-swiper, .project-info{
+    width: 100%;
+  }
+  .project-swiper{
+    aspect-ratio: 5 / 3;
+  }
+  .project-swiper .swiper-slide{
+    padding: 40px;
+  }
+  .project-swiper .tab-mockup-slide .landscape{
+    width: 50%;
+    right: 40px;
+    bottom: calc(20% - 40px);
+  }
+  .project-info{
+    height: fit-content;
+  }
+  .project__title{
+    gap: 12px;
+  }
+  .project__detail-wrap{
+    margin-top: 20px;
+  }
+  .prjct-period{
+    width: var(--column-2);
+  }
+  .prjct-role{
+    width: fit-content;
+  }
+  .project-info .page-button{
+    margin-top: 32px;
+  }
+  .project-info .page-button-left{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+
+
+/* ========== Responsive: Mobile ========== */
+@media all and (max-width: 768px){
+  /* ===== Main Visual ===== */
+  /* ===== section: 인적사항 ===== */
+  .self-intro-wrap{
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  .self-intro__name{
+    justify-content: center;
+  }
+  [class*="self-intro__slogan"]{
+    margin-top: 6px;
+  }
+  .self-intro__slogan{
+    display: none;
+  }
+  .self-intro__slogan--mo{
+    display: block;
+    text-align: center;
+  }
+  .self-info-wrap{
+    gap: 32px;
+  }
+  .personal-info, .edu-exp-info, .certi-info{
+    width: 100%;
+  }
+  .self-info__title{
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .self-info__title img{
+    width: 12px;
+  }
+  .self-info__timeline::before{
+    left: 4px;
+  }
+  .timeline__dot{
+    width: 9px;
+  }
+
+
+
+  /* ===== section: 핵심 역량 ===== */
+  .competency-wrap{
+    gap: 42px;
+  }
+  .competency{
+    width: 100%;
+  }
+  .competency__title{
+    margin: var(--basic-gap) 0 6px 0;
+  }
+
+
+
+  /* ===== section: 스킬 ===== */
+  #skillSec{
+    min-height: 800px;
+  }
+  #skillSec .tab-wrap{
+    display: none;
+  }
+  #skillSec .select-wrap{
+    display: block;
+    margin-left: auto;
+    margin-bottom: 16px;
+  }
+  .skill-wrap{
+    gap: 36px;
+  }
+  .skill{
+    width: 100%;
+    gap: 12px;
+  }
+  [class*="skill__badge"]{
+    margin-bottom: 4px;
+  }
+  .skill__accdn-icon{
+    display: block;
+    margin-left: auto;
+  }
+  .skill__accdn-icon .fa-minus{
+    display: none;
+  }
+  .skill__desc{
+    max-height: 0;
+    height: fit-content;
+    overflow: hidden;
+    transition-duration: var(--transition-025);
+  }
+  /* select 기능 */
+  #skillSec .select-wrap:has(input[value="all"]:checked) ~ .skill-wrap .skill,
+  #skillSec .select-wrap:has(input[value="fe"]:checked) ~ .skill-wrap .skill[data-type="fe"],
+  #skillSec .select-wrap:has(input[value="lib"]:checked) ~ .skill-wrap .skill[data-type="lib"],
+  #skillSec .select-wrap:has(input[value="design"]:checked) ~ .skill-wrap .skill[data-type="design"],
+  #skillSec .select-wrap:has(input[value="product"]:checked) ~ .skill-wrap .skill[data-type="product"]{
+    display: flex;
+  }
+  /* 아코디언 */
+  .skill.is-open .skill__accdn-icon .fa-minus{
+    display: block;
+  }
+  .skill.is-open .skill__accdn-icon .fa-plus{
+    display: none;
+  }
+  .skill.is-open .skill__desc{
+    max-height: 100px;
+  }
+
+
+
+  /* ===== section: 경력사항 ===== */
+  #careerSec .section__content{
+    width: 100%;
+  }
+  .career{
+    flex-direction: column;
+  }
+  .career__date img{
+    width: 12px;
+  }
+  .career__info{
+    width: 100%;
+  }
+  .graph__bar{
+    max-width: calc(100% - 36px - 12px);  /* 퍼센트 텍스트 너비 + 갭 */
+  }
+  #careerSec .pagination-wrap{
+    margin: 24px 0 0 0;
+  }
+
+
+
+  /* ===== section: 프로젝트 ===== */
+  .project-wrap{
+    gap: 20px;
+  }
+  .project-swiper{
+    border-radius: var(--border-radius-16);
+  }
+  .project-swiper .swiper-slide{
+    padding: 24px;
+  }
+  .project-swiper .tab-mockup-slide .landscape{
+    width: 50%;
+    right: 24px;
+    bottom: calc(20% - 24px);
+  }
+  .project__title{
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .project__title img{
+    width: 12px;
+  }
+  .project__detail-wrap{
+    margin-top: 16px;
+    gap: 16px calc(2*var(--basic-gap));
+  }
+  .role-wrap{
+    gap: 8px;
+  }
+  .role + .role{
+    padding-left: 8px;
+  }
+  .skill-tool-wrap{
+    gap: 6px;
+  }
+  .pjct-skill-icon{
+    width: 24px;
+  }
+
+
+
+  .project-info .page-button-left{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+
+
+  /* ===== section: 교육 활동 ===== */
+  .edu-wrap{
+    width: 100%; 
+  }
+  .edu{
+    padding: 24px 0;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .edu__date img{
+    width: 12px;
+  }
+  .edu__institution{
+    gap: 6px;
+  }
+  .edu__detail::before{
+    top: 11px;
+  }
+}

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/common/logo.ico">
+  <title>김도영 | 프론트엔드 개발자</title>
+  <link rel="stylesheet" href="css/common/import.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <!-- ===== main visual ===== -->
+  <div id="mainVisual">rkskek</div>
+
+  <div class="body__inner">
+    <!-- ===== header ===== -->
+    <header id="header" class="header">
+      <div class="header__pc">
+        <div class="header__inner">
+          <img class="header__logo" src="assets/common/header_logo.svg" alt="DY's Web Portfolio">
+          <nav class="nav">
+            <ul class="gnb">
+              <li class="gnb__li">
+                <a href="#personalInfoSec"><span class="text--l">인적사항</span></a>
+              </li>
+              <li class="gnb__li">
+                <a href="#competeSec"><span class="text--l">핵심 역량</span></a>
+              </li>
+              <li class="gnb__li">
+                <a href="#skillSec"><span class="text--l">스킬</span></a>
+              </li>
+              <li class="gnb__li">
+                <a href="#careerSec"><span class="text--l">경력 사항</span></a>
+              </li>
+              <li class="gnb__li">
+                <a href="#prjctSec"><span class="text--l">프로젝트</span></a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__btn-wrap">
+            <button class="header__btn visible" id="moMenuOpenBtn"><i class="fa-solid fa-bars icon--medium"></i></button>
+            <button class="header__btn" id="moMenuCloseBtn"><i class="fa-solid fa-xmark icon--medium"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 모바일 헤더 메뉴 -->
+      <div class="header__mo" id="moMenuWrap">
+        <div class="header__overlay"></div>
+        <nav class="nav">
+          <ul class="gnb-mo">
+            <li class="gnb-mo__li">
+              <a href="#personalInfoSec"><i class="fa-solid fa-angles-right icon--small"></i><span class="text--l">인적사항</span></a>
+            </li>
+            <li class="gnb-mo__li">
+              <a href="#competeSec"><i class="fa-solid fa-angles-right icon--small"></i><span class="text--l">핵심 역량</span></a>
+            </li>
+            <li class="gnb-mo__li">
+              <a href="#skillSec"><i class="fa-solid fa-angles-right icon--small"></i><span class="text--l">스킬</span></a>
+            </li>
+            <li class="gnb-mo__li">
+              <a href="#careerSec"><i class="fa-solid fa-angles-right icon--small"></i><span class="text--l">경력 사항</span></a>
+            </li>
+            <li class="gnb-mo__li">
+              <a href="#prjctSec"><i class="fa-solid fa-angles-right icon--small"></i><span class="text--l">프로젝트</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+
+    <main id="main" class="main">
+      <!-- ===== section: 인적사항 ===== -->
+      <section id="personalInfoSec" class="section">
+        <div class="inner">
+          <div class="self-intro-wrap">
+            <img class="id-photo" src="assets/personal/id-photo.jpg" alt="증명사진">
+            <div class="self-intro">
+              <div class="self-intro__name">
+                <h3>김도영</h3><span class="text--xl">/</span><span class="text--xl">Kim Do Young</span>
+              </div>
+              <h4 class="self-intro__slogan">
+                <span>구조로 문제를 해결하는</span> 프론트엔드 개발자입니다.
+              </h4>
+              <h4 class="self-intro__slogan--mo">
+                <span>구조로 문제를 해결하는</span> FE 개발자
+              </h4>
+              <p class="text--m">
+                UI/UX 분석부터 구현, 검증까지의 전 과정을 경험하며 사용자 경험과 유지보수성을 함께 고려하는 개발 역량을 쌓아왔습니다.<br>
+                기술 구현에 그치지 않고, 구조 설계와 협업 효율을 고민하며 더 나은 결과를 만드는 과정을 중요하게 생각합니다. 체계적인 사고와 꾸준한 학습을 바탕으로 실무에 강한 프론트엔드 개발자로 성장하고 있습니다.
+              </p>
+            </div>
+          </div>
+          <div class="self-info-wrap">
+            <div class="self-info personal-info">
+              <div class="self-info__title">
+                <img src="assets/common/logo.ico" alt="로고"><h4>인적사항</h4>
+              </div>
+              <ul class="personal-info__ul">
+                <li>
+                  <i class="fa-solid fa-star icon--xsmall"></i>
+                  <span class="text--m">만 <span id="fullAge"></span>세 (1996.05)</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-location-dot icon--xsmall"></i>
+                  <span class="text--m">세종특별자치시</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-phone icon--xsmall"></i>
+                  <span class="text--m">010-3104-6310</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-envelope icon--xsmall"></i>
+                  <span class="text--m">kimdo0.0515@gmail.com</span>
+                </li>
+              </ul>
+            </div>
+            <div class="self-info edu-exp-info">
+              <div class="self-info__title">
+                <img src="assets/common/logo.ico" alt="로고"><h4>학력 및 경력</h4>
+              </div>
+              <ul class="self-info__timeline">
+                <li>
+                  <span class="timeline__dot"></span>
+                  <div class="timeline__content">
+                    <p class="text--m">그린컴퓨터아트학원 프론트엔드 개발자 과정 수료</p>
+                    <p class="text--s">2025 - 2026</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="timeline__dot"></span>
+                  <div class="timeline__content">
+                    <p class="text--m">델타인덱스 (UI/UX 분석설계 및 구현)</p>
+                    <p class="text--s">2022 - 2025</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="timeline__dot"></span>
+                  <div class="timeline__content">
+                    <p class="text--m">SBS아카데미 컴퓨터학원 웹퍼블리셔 과정 수료</p>
+                    <p class="text--s">2021 - 2022</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="timeline__dot"></span>
+                  <div class="timeline__content">
+                    <p class="text--m">국립한국해양대학교 졸업 (해양공학과)</p>
+                    <p class="text--s">2020</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="timeline__dot"></span>
+                  <div class="timeline__content">
+                    <p class="text--m">광주문정여자고등학교 졸업</p>
+                    <p class="text--s">2015</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="self-info certi-info">
+              <div class="self-info__title">
+                <img src="assets/common/logo.ico" alt="로고"><h4>자격증</h4>
+              </div>
+              <ul class="self-info__timeline">
+                <li>
+                  <span class="timeline__dot"></span>
+                  <div class="timeline__content">
+                    <p class="text--m">정보처리기사</p>
+                    <p class="text--s">2025</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="timeline__dot"></span>
+                  <div class="timeline__content">
+                    <p class="text--m">ISTQB foundation level</p>
+                    <p class="text--s">2023</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="timeline__dot"></span>
+                  <div class="timeline__content">
+                    <p class="text--m">웹디자인기능사</p>
+                    <p class="text--s">2021</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="timeline__dot"></span>
+                  <div class="timeline__content">
+                    <p class="text--m">컴퓨터그래픽스운용기능사</p>
+                    <p class="text--s">2021</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="timeline__dot"></span>
+                  <div class="timeline__content">
+                    <p class="text--m">컴퓨터활용능력 2급</p>
+                    <p class="text--s">2017</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- ===== section: 핵심 역량 ===== -->
+      <section id="competeSec" class="section">
+        <div class="inner">
+          <div class="section__title">
+            <h2>핵심 역량</h2>
+            <p class="text--xl">분석부터 검증까지, <br>구조로 완성하는 프론트엔드 개발자</p>
+          </div>
+
+          <div class="competency-wrap">
+            <div class="competency">
+              <div class="competency__img-wrap">
+                <img src="assets/competency/competency_1.svg" alt="요구사항 분석 및 UI/UX 설계">
+              </div>
+              <div class="competency__title text--l bold">요구사항 분석 및 UI/UX 설계</div>
+              <p class="competency__desc text--m">
+                고객의 요구사항을 분석하고 명세화하여 관리합니다. 요구사항과 데이터 구조, 시스템의 특성을 바탕으로 전체 시스템의 UI/UX 설계를 할 수 있습니다.
+              </p>
+            </div>
+            <div class="competency">
+              <div class="competency__img-wrap">
+                <img src="assets/competency/competency_2.svg" alt="FE 개발을 통한 웹 인터페이스 구현">
+              </div>
+              <div class="competency__title text--l bold">FE 개발을 통한 웹 인터페이스 구현</div>
+              <p class="competency__desc text--m">
+                HTML, CSS를 이용한 퍼블리싱부터 각 UI 구현에 최적화된 라이브러리와 JS를 사용한 프론트엔드 기능을 구현하여 웹 인터페이스를 구현할 수 있습니다.
+              </p>
+            </div>
+            <div class="competency">
+              <div class="competency__img-wrap">
+                <img src="assets/competency/competency_3.svg" alt="SW 제품 설계 기능 검증">
+              </div>
+              <div class="competency__title text--l bold">SW 제품 설계 기능 검증</div>
+              <p class="competency__desc text--m">
+                고객 요구사항과 일치하게 구현되었는지 검증합니다. E2E 테스트를 위한 테스트케이스를 작성하고, 예외사항 처리 확인과 개선 후 회귀 테스트까지 수행합니다.
+              </p>
+            </div>
+            <div class="competency">
+              <div class="competency__img-wrap">
+                <img src="assets/competency/competency_4.svg" alt="세심한 커뮤니케이션 능력">
+              </div>
+              <div class="competency__title text--l bold">세심한 커뮤니케이션 능력</div>
+              <p class="competency__desc text--m">
+                GitLab, Slack, Notion 등의 협업 도구 사용 경험이 있습니다. 기획, 디자인, 개발, 검증 등 다양한 직무 경험을 기반으로 다른 직군과 세심한 커뮤니케이션이 가능합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- ===== section: 스킬 ===== -->
+      <section id="skillSec" class="section">
+        <div class="inner">
+          <div class="section__title">
+            <h2>스킬</h2>
+            <p class="text--xl">아래의 스킬과 툴을 사용할 수 있습니다.</p>
+          </div>
+
+          <!-- Tab filter: PC & Tab -->
+          <div class="tab-wrap">
+            <label class="tab">
+              <input type="radio" name="skill_tab" value="all" checked>
+              <span>전체</span>
+            </label>
+            <label class="tab">
+              <input type="radio" name="skill_tab" value="fe">
+              <span>프론트엔드</span>
+            </label>
+            <label class="tab">
+              <input type="radio" name="skill_tab" value="lib">
+              <span>라이브러리</span>
+            </label>
+            <label class="tab">
+              <input type="radio" name="skill_tab" value="design">
+              <span>디자인</span>
+            </label>
+            <label class="tab">
+              <input type="radio" name="skill_tab" value="product">
+              <span>생산성</span>
+            </label>
+          </div>
+
+          <!-- Select filter: Mobile -->
+          <div class="select-wrap">
+            <button class="select-btn">
+              <span class="text--l">전체</span><i class="fa-solid fa-caret-down icon--xsmall"></i>
+            </button>
+            <div class="select-list">
+              <label class="select-option">
+                <input type="radio" name="skill_select" value="all" checked>
+                <span class="text--l">전체</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="skill_select" value="fe">
+                <span class="text--l">프론트엔드</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="skill_select" value="lib">
+                <span class="text--l">라이브러리</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="skill_select" value="design">
+                <span class="text--l">디자인</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="skill_select" value="product">
+                <span class="text--l">생산성</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="skill-wrap">
+            <!-- <div class="skill" data-type="">
+              <div class="skill__top">
+                <div class="skill__icon">
+                  <img src="" alt="">
+                </div>
+                <div class="skill__title-wrap">
+                  <span class="skill__badge--cyan"></span>
+                  <h4></h4>
+                </div>
+                <div class="skill__accdn-icon">
+                  <i class="fa-solid fa-plus icon--small"></i>
+                  <i class="fa-solid fa-minus icon--small"></i>
+                </div>
+              </div>
+              <p class="skill__desc"></p>
+            </div> -->
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- ===== section: 경력사항 ===== -->
+      <section id="careerSec" class="section">
+        <div class="inner">
+          <div class="section__title">
+            <h2>경력사항</h2>
+            <p class="text--xl">다양한 업무와 프로젝트를 통해<br> 실무 경험을 쌓았습니다.</p>
+          </div>
+
+          <div class="section__content">
+            <p class="guide-txt text--s">
+              ※ 업무 기여도는 해당 역할을 기준으로 작성하였습니다. 
+            </p>
+
+            <ul class="career-list">
+              <!-- <li class="career">
+                <div class="career__date">
+                  <img src="assets/common/logo.svg" alt="로고">
+                  <div class="date text--m">2024.12 - 2025.01</div>
+                </div>
+                <div class="career__info">
+                  <div class="career__project text--xl bold">SW V&V 검증</div>
+                  <p class="career__detail text--m">SW 검증 수행, 시험성적서 관련 문서 작성</p>
+                  <div class="career-graph-wrap">
+                    <div class="career-graph" data-career="test">
+                      <p class="text--s bold">SW 검증 수행</p>
+                      <div class="graph">
+                        <div class="graph__bar">
+                          <div class="graph__highlight"></div>
+                        </div>
+                        <span class="graph__num text--m">100%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li> -->
+            </ul>
+
+            <div class="pagination-wrap">
+              <button class="pagination-arrow-btn" id="crPrevBtn"><i class="fa-solid fa-chevron-left icon--small"></i></button>
+              <div class="page-num-wrap">
+                <!-- <button class="pagination-num-btn"><span>1</span></button> -->
+              </div>
+              <button class="pagination-arrow-btn" id="crNextBtn"><i class="fa-solid fa-chevron-right icon--small"></i></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- ===== section: 프로젝트 ===== -->
+      <section id="prjctSec" class="section">
+        <div class="inner">
+          <div class="section__title">
+            <h2>프로젝트</h2>
+            <p class="text--xl">주요 프로젝트의 세부 내용을 확인해보세요.</p>
+          </div>
+
+          <!-- <div class="project-wrap" id="">
+            <div class="swiper project-swiper" id="">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide pc-mockup-slide">
+                  <img src="" alt="">
+                </div>
+                <div class="swiper-slide tab-mockup-slide">
+                  <img class="portrait" src="" alt="">
+                  <img class="landscape" src="" alt="">
+                </div>
+                <div class="swiper-slide mo-mockup-slide">
+                  <img class="portrait-1" src="" alt="">
+                  <img class="portrait-2" src="" alt="">
+                  <img class="portrait-3" src="" alt="">
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project__title">
+                <img src="assets/common/logo.svg" alt="로고">
+                <span class="text--xl bold"></span>
+              </div>
+              <div class="project__tag">
+                <span class="tag">#</span>
+              </div>
+              <div class="project__detail-wrap">
+                <div class="project__detail">
+                  <div class="detail__title text--m bold">프로젝트 소개</div>
+                  <p class="text--m"></p>
+                </div>
+                <div class="project__detail prjct-period">
+                  <div class="detail__title text--m bold">기간</div>
+                  <p class="text--m">Mon</p>
+                </div>
+                <div class="project__detail prjct-role">
+                  <div class="detail__title text--m bold">역할</div>
+                  <div class="role-wrap text--m">
+                    <div class="role planning">
+                      <span>기획</span><span class="bold">%</span>
+                    </div>
+                    <div class="role design">
+                      <span>디자인</span><span class="bold">%</span>
+                    </div>
+                    <div class="role develop">
+                      <span>개발</span><span class="bold">%</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="project__detail">
+                  <div class="detail__title text--m bold">사용 스킬 및 툴</div>
+                  <div class="skill-tool-wrap">
+                    <img class="pjct-skill-icon" src="" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="page-button">
+                <div class="page-button-left">
+                  <button class="btn btn--medium btn--gray github-btn" data-link="">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub로 이동</span>
+                  </button>
+                  <button class="btn btn--medium btn--gray url-btn" data-link="">
+                    <i class="fa-solid fa-link"></i>
+                    <span>웹사이트로 이동</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </section>
+
+
+
+      <!-- ===== section: 교육 활동 ===== -->
+      <section id="eduSec" class="section">
+        <div class="inner">
+          <div class="section__title">
+            <h2>교육 활동</h2>
+            <p class="text--xl">전문성을 기르기 위해 수료한 교육입니다.</p>
+          </div>
+
+          <div class="edu-wrap">
+            <!-- <div class="edu">
+              <div class="edu__date">
+                <img src="assets/common/logo.svg" alt="로고">
+                <span class="text--m"></span>
+              </div>
+              <div class="edu__info">
+                <div class="edu__title text--l bold"></div>
+                <div class="edu__institution text--s">
+                  <span>교육기관</span><span>|</span><span class="institution bold"></span>
+                </div>
+                <ul class="edu__content text--m">
+                  <li class="edu__detail"></li>
+                </ul>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <!-- ===== footer ===== -->
+    <footer id="footer" class="footer">
+      <div class="footer__inner">
+        <h4>Thank you for visiting and Contact me!</h4>
+        <div class="footer__mail">
+          <i class="fa-solid fa-envelope icon--small"></i>
+          <span class="text--xl">kimdo0.0515@gmail.com</span>
+        </div>
+        <p class="copyright text--s">
+          © 2026 김도영, All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </div>  <!-- body__inner -->
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="js/variable/object.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

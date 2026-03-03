@@ -1,0 +1,166 @@
+:root{
+  /* Main Color */
+  --blue-100: #EAF2FB;
+  --blue-200: #C9DCF3;
+  --blue-300: #9FC0E8;
+  --blue-400: #6EA0DB;
+  --blue-500: #2F6FD6;
+  --blue-600: #1F4FA8;
+
+  /* Sub Color */
+  --cyan-100: #E6FBFF;
+  --cyan-200: #BFF3FA;
+  --cyan-300: #8CE7F3;
+  --cyan-400: #4FD4E8;
+  --cyan-500: #12B7D6;
+  --cyan-600: #0A8AA5;
+
+  --gray-100: #F3F5FA;
+  --gray-200: #E1E6F0;
+  --gray-300: #C5CDDD;
+  --gray-400: #9DA8C2;
+  --gray-500: #66708A;
+  --gray-600: #3F465C;
+
+  --purple-100: #F3EDFF;
+  --purple-200: #DDD0FF;
+  --purple-300: #BCA9FF;
+  --purple-400: #9778FF;
+  --purple-500: #6E4DFF;
+  --purple-600: #4A32B8;
+
+  /* Accent Color */
+  --yellow-100: #FFFBEA;
+  --yellow-200: #FFF3C4;
+  --yellow-300: #FFE38A;
+  --yellow-400: #FFD34D;
+  --yellow-500: #FFC107;
+  --yellow-600: #D39A00;
+
+  --red-100: #FFF0F0;
+  --red-200: #FFD6D6;
+  --red-300: #FFAAAA;
+  --red-400: #FF7A7A;
+  --red-500: #F04444;
+  --red-600: #C92E2E;
+
+  /* White & Black */
+  --white: #FFFFFF;
+  --black: #111111;
+
+  /* font-size */
+  --title-h1: 64px;
+  --title-h2: 48px;
+  --title-h3: 36px;
+  --title-h4: 24px;
+  --text-xl: 24px;
+  --text-l: 20px;
+  --text-m: 16px;
+  --text-s: 14px;
+
+  /* border-radius */
+  --border-radius-6: 6px;
+  --border-radius-16: 16px;
+  --border-radius-24: 24px;
+
+  /* box-shadow */
+  --box-shadow: 0 0 10px rgba(17, 17, 17, 0.25);
+
+  /* transition */
+  --transition-015: 0.15s;
+  --transition-025: 0.25s;
+  --transition-035: 0.35s;
+
+  /* Display Basic grid gap */
+  /* 화면 디자인에서 그리드 컬럼에 맞춰 사이즈를 지정한 경우에만 사용 */
+  /* 수치가 우연히 일치하는 부분에는 사용하지 않음 */
+  --basic-gap: 24px;
+
+  /* Content inner */
+  --inner: 1200px;
+
+  /* grid column */
+  /* 화면 디자인에서 grid column을 차지하는 개수를 의미 */
+  /* 디자인할 때 너비를 gird column 개수에 맞춘 경우에만 사용 */
+  --column-1: calc((var(--inner) - 11*var(--basic-gap)) / 12);
+  --column-2: calc((var(--inner) - 5*var(--basic-gap)) / 6);
+  --column-3: calc((var(--inner) - 3*var(--basic-gap)) / 4);
+  --column-4: calc((var(--inner) - 2*var(--basic-gap)) / 3);
+  --column-5: calc((var(--inner) - 2*var(--basic-gap) - var(--column-2)) / 2);
+  --column-6: calc((var(--inner) - var(--basic-gap)) / 2);
+  --column-7: calc(var(--inner) - var(--basic-gap) - var(--column-5));
+  --column-8: calc(var(--inner) - var(--basic-gap) - var(--column-4));
+  --column-9: calc(var(--inner) - var(--basic-gap) - var(--column-3));
+  --column-10: calc(var(--inner) - var(--basic-gap) - var(--column-2));
+  --column-11: calc(var(--inner) - var(--basic-gap) - var(--column-1));
+  --column-12: var(--inner);
+}
+
+/* Laptop Size */
+@media all and (max-width: 1334px){
+  :root{
+    --inner: 90%;
+
+    --column-1: calc((100% - 11*var(--basic-gap)) / 12);
+    --column-2: calc((100% - 5*var(--basic-gap)) / 6);
+    --column-3: calc((100% - 3*var(--basic-gap)) / 4);
+    --column-4: calc((100% - 2*var(--basic-gap)) / 3);
+    --column-5: calc((100% - 2*var(--basic-gap) - var(--column-2)) / 2);
+    --column-6: calc((100% - var(--basic-gap)) / 2);
+    --column-7: calc(100% - var(--basic-gap) - var(--column-5));
+    --column-8: calc(100% - var(--basic-gap) - var(--column-4));
+    --column-9: calc(100% - var(--basic-gap) - var(--column-3));
+    --column-10: calc(100% - var(--basic-gap) - var(--column-2));
+    --column-11: calc(100% - var(--basic-gap) - var(--column-1));
+    --column-12: 100%;
+  }
+}
+
+/* Tablet Size */
+@media all and (max-width: 1024px){
+  :root{
+    --basic-gap: 20px;
+
+    --column-1: calc((100% - 5*var(--basic-gap)) / 6);
+    --column-2: calc((100% - 2*var(--basic-gap)) / 3);
+    --column-3: calc((100% - var(--basic-gap)) / 2);
+    --column-4: calc(100% - var(--basic-gap) - var(--column-2));
+    --column-5: calc(100% - var(--basic-gap) - var(--column-1));
+    --column-6: 100%;
+    --column-7: 100%;  /* column 7부터는 모두 6과 동일 */
+    --column-8: 100%;
+    --column-9: 100%;
+    --column-10: 100%;
+    --column-11: 100%;
+    --column-12: 100%;
+  }
+}
+
+/* Mobile Size */
+@media all and (max-width: 768px){
+  :root{
+    --basic-gap: 12px;
+
+    --title-h1: 42px;
+    --title-h2: 32px;
+    --title-h3: 28px;
+    --title-h4: 20px;
+    --text-xl: 18px;
+    --text-l: 16px;
+    --text-m: 14px;
+    --text-s: 12px;
+
+    --column-1: calc((100% - 3*var(--basic-gap)) / 4);
+    --column-2: calc((100% - var(--basic-gap)) / 2);
+    --column-3: calc(100% - var(--basic-gap) - var(--column-1));
+    --column-4: 100%;
+    --column-5: 100%;  /* column 5부터는 모두 4와 동일 */
+    --column-6: 100%;
+    --column-7: 100%;
+    --column-8: 100%;
+    --column-9: 100%;
+    --column-10: 100%;
+    --column-11: 100%;
+    --column-12: 100%;
+  }
+}
