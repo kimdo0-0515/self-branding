@@ -324,6 +324,7 @@
   box-shadow: 0 0 24px rgba(17, 17, 17, 0.25);
 }
 .project-swiper .swiper-slide{
+  height: auto;
   padding: 24px;
   background-color: var(--white);
 }
@@ -817,4 +818,5 @@
   .edu__detail::before{
     top: 11px;
   }
+
 }
