@@ -1,3 +1,34 @@
+/* 메인비주얼 팝 아이콘 세트 */
+const popIcons = {
+  /* 크기, 프레임 여부, 이미지 경로, 이미지 alt */
+  uiuxTag: [
+    {size: 'medium', frame: 'frame', src: 'assets/skill/skill_aos.svg', alt: 'AOS'},
+    {size: 'small', frame: '', src: 'assets/skill/skill_notion.svg', alt: '노션'},
+    {size: 'large', frame: 'frame', src: 'assets/skill/skill_swiper.svg', alt: 'Swiper'},
+    {size: 'small', frame: '', src: 'assets/skill/skill_photoshop.svg', alt: '포토샵'},
+    {size: 'small', frame: '', src: 'assets/skill/skill_illu.svg', alt: '일러스트레이터'},
+    {size: 'large', frame: 'frame', src: 'assets/skill/skill_figma.svg', alt: '피그마'}
+  ],
+  publishTag: [
+    {size: 'large', frame: '', src: 'assets/skill/skill_html.svg', alt: 'HTML'},
+    {size: 'small', frame: 'frame', src: 'assets/skill/skill_slick.svg', alt: 'Slick'},
+    {size: 'small', frame: 'frame', src: 'assets/skill/skill_font-awesome.svg', alt: 'FontAwesome'},
+    {size: 'large', frame: '', src: 'assets/skill/skill_css.svg', alt: 'CSS'},
+    {size: 'small', frame: '', src: 'assets/skill/skill_bootstrap.svg', alt: 'Bootstrap'},
+    {size: 'medium', frame: 'frame', src: 'assets/skill/skill_scss.svg', alt: 'SCSS'}
+  ],
+  feTag: [
+    {size: 'small', frame: 'frame', src: 'assets/skill/skill_react.svg', alt: '리액트'},{size: 'large', frame: '', src: 'assets/skill/skill_js.svg', alt: 'JS'},
+    {size: 'small', frame: '', src: 'assets/skill/skill_github.svg', alt: '깃허브'},
+    {size: 'medium', frame: 'frame', src: 'assets/skill/skill_vscode.svg', alt: 'VSCode'},
+    {size: 'large', frame: 'frame', src: 'assets/skill/skill_jquery.svg', alt: 'JQuery'},{size: 'small', frame: '', src: 'assets/skill/skill_eclipse.svg', alt: '이클립스'},
+  ]
+};
+
+
+
+
+
 /* 스킬 객체 배열 */
 const skills = [
   {

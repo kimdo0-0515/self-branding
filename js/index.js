@@ -11,6 +11,18 @@ const $moMenuCloseBtn = document.getElementById('moMenuCloseBtn');
 const $moMenuWrap = document.getElementById('moMenuWrap');
 const $moNav = $moMenuWrap.querySelector('.nav');
 
+const typingText = "UI/UX 기획부터 웹 퍼블리싱까지, ";
+const $typing = document.getElementById('typing');
+const $textClipFill = document.querySelector('.text-clip-wrap .fill');
+
+const $uiuxTag = document.getElementById('uiuxTag');
+const $publishTag = document.getElementById('publishTag');
+const $feTag = document.getElementById('feTag');
+
+const $uiuxIconSet = document.querySelector('.pop-icon-set[data-tag="uiuxTag"]');
+const $publishIconSet = document.querySelector('.pop-icon-set[data-tag="publishTag"]');
+const $feIconSet = document.querySelector('.pop-icon-set[data-tag="feTag"]');
+
 const $fullAge = document.getElementById('fullAge');
 
 const $selectBtnSpan = document.querySelector('#skillSec .select-btn span');
@@ -51,6 +63,11 @@ $moMenuCloseBtn.addEventListener('click', toggleMoMenuBtns);
 document.addEventListener('click', moMenuOutClick);
 
 
+
+/* === section: 메인 비주얼 === */
+textTyping();
+
+
 /* === section: 인적사항 === */
 /* 만 나이 계산 */
 calculateAge("1996-05-15");
@@ -88,6 +105,7 @@ $urlBtns.forEach(btn => {
 /* ========== Define Functions ========== */
 // 화면 렌더링
 function renderPage(){
+  renderPopIcons();
   renderSkill();
   renderCareer();
   renderProject();
@@ -113,6 +131,82 @@ function moMenuOutClick(e){
     $moMenuOpenBtn.classList.add('visible');
     $moMenuCloseBtn.classList.remove('visible');
   }
+}
+
+
+
+/* === section: 메인비주얼 === */
+/* 타이핑 애니메이션 & 대제목 채우기 */
+function textTyping(){
+  let i = 0;
+
+  const typingInterval = setInterval(() => {
+    $typing.textContent += typingText[i];
+    i++;
+
+    if (i === typingText.length) {
+      clearInterval(typingInterval);
+      $textClipFill.classList.add('active');  // 타이핑 종료 후 대제목 색 채우기
+
+      // 대제목 색 채우기 실행 시간인 1초와 여유시간 1초 후 태그 및 아이콘 팝업 애니메이션 실행
+      setTimeout(startHeroTagLoop, 2000);
+    }
+  }, 150);
+}
+
+/* 태그와 아이콘 세트 active */
+function setHeroTagActive(tagEl, iconSetEl){
+  // 모든 태그와 아이콘 세트에서 active 클래스명 제거해서 초기화
+  [$uiuxTag, $publishTag, $feTag].forEach(tag => tag.classList.remove('active'));
+  [$uiuxIconSet, $publishIconSet, $feIconSet].forEach(iconSet => iconSet.classList.remove('active'));
+
+  // 타겟 태그와 아이콘 세트에만 active 클래스명 추가
+  tagEl.classList.add('active');
+  iconSetEl.classList.add('active');
+}
+
+function startHeroTagLoop(){
+  const heroTagList = [
+    { tag: $uiuxTag, iconSet: $uiuxIconSet },
+    { tag: $publishTag, iconSet: $publishIconSet },
+    { tag: $feTag, iconSet: $feIconSet }
+  ];
+
+  let currentIdx = 0;
+
+  // '#UI/UX 설계' 태그에 대해 애니메이션 처음 1회 실행
+  setHeroTagActive(heroTagList[currentIdx].tag, heroTagList[currentIdx].iconSet);
+
+  // '#웹 퍼블리싱 → #프론트엔드 → #UI/UX 설계...' 반복
+  setInterval(() => {
+    currentIdx = (currentIdx + 1) % heroTagList.length;
+    setHeroTagActive(heroTagList[currentIdx].tag, heroTagList[currentIdx].iconSet);
+  }, 2250); // 실행시간 0.25s + 사이 딜레이 시간 2s = 2.25s
+}
+
+/* 팝아이콘 렌더링 */
+function renderPopIcons(){
+  const uiuxTagMap = popIcons.uiuxTag.map(arr => {
+    return `<div class="pop-icon ${arr.size} ${arr.frame}">
+              <img src="${arr.src}" alt="${arr.alt}">
+            </div>`;
+  });
+
+  const publishTagMap = popIcons.publishTag.map(arr => {
+    return `<div class="pop-icon ${arr.size} ${arr.frame}">
+              <img src="${arr.src}" alt="${arr.alt}">
+            </div>`;
+  });
+
+  const feTagMap = popIcons.feTag.map(arr => {
+    return `<div class="pop-icon ${arr.size} ${arr.frame}">
+              <img src="${arr.src}" alt="${arr.alt}">
+            </div>`;
+  });
+
+  $uiuxIconSet.innerHTML = uiuxTagMap.join('');
+  $publishIconSet.innerHTML = publishTagMap.join('');
+  $feIconSet.innerHTML = feTagMap.join('');
 }
 
 
