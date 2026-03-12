@@ -147,11 +147,12 @@ function textTyping(){
     if (i === typingText.length) {
       clearInterval(typingInterval);
       $textClipFill.classList.add('active');  // 타이핑 종료 후 대제목 색 채우기
-
-      // 대제목 색 채우기 실행 시간인 1초와 여유시간 1초 후 태그 및 아이콘 팝업 애니메이션 실행
-      setTimeout(startHeroTagLoop, 2000);
+      
+      // 대제목 색 채우기 끝나면 바로 태그 및 아이콘 팝업 애니메이션 실행
+      setTimeout(startHeroTagLoop, 750);
+      
     }
-  }, 150);
+  }, 100);
 }
 
 /* 태그와 아이콘 세트 active */
@@ -181,7 +182,7 @@ function startHeroTagLoop(){
   setInterval(() => {
     currentIdx = (currentIdx + 1) % heroTagList.length;
     setHeroTagActive(heroTagList[currentIdx].tag, heroTagList[currentIdx].iconSet);
-  }, 2250); // 실행시간 0.25s + 사이 딜레이 시간 2s = 2.25s
+  }, 1000); // 실행시간 0.25s + 사이 딜레이 시간 0.75s = 1s
 }
 
 /* 팝아이콘 렌더링 */
